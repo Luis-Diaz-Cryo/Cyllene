@@ -865,6 +865,7 @@ MonoBehaviour:
   formSprites:
   - {fileID: 7482667652216324306, guid: d122c0ae9bdf16746b9e1f20b8b31275, type: 3}
   - {fileID: -4249797899361605437, guid: 61fb59e799c39294baed93345ca24383, type: 3}
+  formNumber: 0
 --- !u!1 &1611155443
 GameObject:
   m_ObjectHideFlags: 0
