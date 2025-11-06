@@ -24,7 +24,7 @@ public class Shapeshift : MonoBehaviour
                 transform.localScale = new Vector3(-2, 1, 1);
             }
             transform.position = new Vector2(transform.position.x, transform.position.y);
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2((float)1.626012, 1);
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2((float)1.626012, (float)1.091607);
             formNumber = 1;
             float bottomAfter = GetBottomY();
             float diff = bottomBefore - bottomAfter;
@@ -44,7 +44,8 @@ public class Shapeshift : MonoBehaviour
                 transform.localScale = new Vector3(-1, (float)1.7, 1);
             }
             transform.position = new Vector2(transform.position.x, transform.position.y);
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2((float)0.6092913, (float)1.213454);
+             gameObject.GetComponent<BoxCollider2D>().offset = new Vector2((float)-0.008769453, (float)0.008375466);
             formNumber = 0;
             float bottomAfter = GetBottomY();
             float diff = bottomBefore - bottomAfter;

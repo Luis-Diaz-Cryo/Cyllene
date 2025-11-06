@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     private BoxCollider2D boxCollider;
     private bool facingRight = true;
 
+    private bool doublejump;
+
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
@@ -49,9 +51,21 @@ public class Movement : MonoBehaviour
             Flip();
         }
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
-            jump(shapeshift.formNumber);
+            doublejump = false;
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGrounded() || (doublejump && shapeshift.formNumber == 0))
+            {
+                jump(shapeshift.formNumber);
+                doublejump = !doublejump;  
+             
+            }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && shapeshift.formNumber == 1)
@@ -75,12 +89,14 @@ public class Movement : MonoBehaviour
         if (formNumber == 0)
         {
             body.velocity = new Vector2(body.velocity.x, speed);
+
         }
-        else if (formNumber== 1)
+        else if (formNumber == 1)
         {
             body.velocity = new Vector2(body.velocity.x, (float)(speed * 0.8));
         }
-        
+
+              
         
     }
 

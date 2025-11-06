@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform player;
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
 }
